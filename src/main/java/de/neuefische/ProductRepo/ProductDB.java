@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class ProductDB {
 
-    Map<Integer, Product> products = new HashMap<>();
+    protected Map<Integer, Product> products = new HashMap<>();
 
     public Product addProduct(Product product){
         products.put(product.getId(), product);
@@ -20,10 +20,14 @@ public class ProductDB {
         return output.toString();
     }
 
+    public Product getObjectProduct(int id){
+        Product output = products.get(id);
+        return output;
+    }
+
+
 
     public String list() {
-        return "ProductDB{" +
-                "products=" + products +
-                '}';
+        return "All products = " + products;
     }
 }
